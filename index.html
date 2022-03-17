@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pomodoro timer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+<!-- settings overlay/navbar -->
+    <header class="header">
+      <h1 class="logo"><a href="index.html"> <img src = "images/blackcat.png"alt= "pomodoro timer" ></a></h1>
+        <ul class="main-nav">
+
+<!-- java for overlay !! -->
+<script>
+  function toggleOverlay(){
+    var overlay = document.getElementById('overlay');
+    var specialBox = document.getElementById('specialBox');
+    overlay.style.opacity = .6;
+    if(overlay.style.display == "block"){
+      overlay.style.display = "none";
+      specialBox.style.display = "none";
+    } else {
+      overlay.style.display = "block";
+      specialBox.style.display = "block";
+    }
+  }
+  </script>
+  </head>
+  <body>
+  <!-- Start Overlay -->
+  <div id="overlay"></div>
+  <!-- End Overlay -->
+  <!-- Start Special Centered Box -->
+  <div id="specialBox">
+    <p>settings content ...</p> 
+    <button onmousedown="toggleOverlay()">close</button>
+  </div>
+  <!-- End Special Centered Box -->
+  <!-- Start Normal Page Content -->
+  <div id="cta">
+    <h2></h2>
+    <p></p>
+    <button onmousedown="toggleOverlay()">settings</button>
+  </div>
+  <!-- End Normal Page Content -->
+
+</header> 
+
+    <figure class="clock">
+      <div class="mins">0</div>
+      <div>:</div>
+      <div class="secs">00</div>
+      <audio
+        src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"
+      ></audio>
+      <svg class="progress-ring" height="120" width="120">
+        <circle
+          class="progress-ring__circle"
+          stroke-width="8"
+          fill="transparent"
+          r="50"
+          cx="60"
+          cy="60"
+        />
+      </svg>
+    </figure>
+
+    <div class="btn-group">
+      <button class="start">start</button>
+      <button class="reset">reset</button>
+      <button class="pause">pause</button>
+    </div>
+
+    <form action=".">
+      <label for="focusTime">work</label>
+      <input type="number" value="1" id="focusTime" />
+      <label for="breakTime">break</label>
+      <input type="number" value="1" id="breakTime" />
+      <button type="submit">save</button>
+    </form>
+    <footer>
+     contact
+    </footer>
+
+    <script src="settings.js"></script>
+    <script src="timer.js"></script>
+    <script src="progress.js"></script>
+  
+
+
+<!-- spotify -->
+<div class="spotify">
+<iframe style="border-radius:12px" 
+src="https://open.spotify.com/embed/playlist/32nCTHyDdztkanmT2b4QIi?utm_source=generator" 
+width="250" 
+height="380" 
+frameBorder="0" 
+allowfullscreen="" 
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
+</div>
+
+
+</body>
+</html>

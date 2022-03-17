@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+
+
+/* settings overlay */
+div#overlay {
+	display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+div#specialBox {
+	display: none;
+	position: relative;
+	z-index: 3;
+	margin: 150px auto 0px auto;
+	width: 500px; 
+	height: 300px;
+	background: #FFF;
+	color: #000;
+}
+div#wrapper {
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	padding-left:24px;
+}
+
+/* spotify */
+div#spotify {
+  position:relative;
+   bottom:500px;
+}
+
+
+
+
+
+
+
+
+
+/* navbar */
+body {
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float:left;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  float:right;
+  margin: 0;
+  font-size: 1.45em;
+}
+
+
+
+.main-nav {
+  margin-top: 5px;
+}
+.logo a,
+.main-nav a {
+ text-align: justify;
+  display: block;
+  
+}
+
+
+
+
+
+
+
+
+
+
+body {
+  height: 100vh;
+  padding: 35px;
+  background-image: url(images/849762.jpg);
+  color: #131313;
+  font-family: "Montserrat", sans-serif;
+}
+h1 {
+  margin: 15px 0;
+  font-weight: 900;
+  font-size: 28px;
+  text-align: center;
+}
+input {
+  transition: 0.5s ease-in-out;
+  margin: 10px 0;
+  font-size: 18px;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.11);
+  border: none;
+}
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+  margin: 35px 0;
+}
+
+button {
+  padding: 9px 25px;
+  background-color: #80bed8;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3 ease 0s;
+}
+
+button:hover {
+  background-color: rgba(39, 149, 177, 0.8);
+}
+
+
+
+
+
+
+label {
+  font-size: 12px;
+}
+form {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  max-width: 370px;
+  margin: 5px auto;
+}
+form button {
+  background: #80bed8;
+  width: 100%;
+  margin: 5px 0;
+  color: white;
+}
+.start {
+  background: #80bed8;
+  color: white;
+}
+.break {
+  background: #80bed8;
+  color: #000000;
+}
+.reset {
+  background: #80bed8;
+  color: #000000;
+}
+.pause {
+  background: #80bed8;
+}
+.resume {
+  background: #80bed8;
+  color: white;
+}
+.clock {
+  padding: 3px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  height: 30%;
+  font-size: 24px;
+}
+.progress-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.progress-ring__circle {
+  transition: 0.5s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke: rgb(51, 65, 255);
+}
+
+footer {
+  position: fixed;
+  bottom: 4px;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.danger {
+  stroke: rgb(243, 17, 28);
+  animation: pulse 0.9s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: rotate(-90deg) scale(1);
+  }
+  50% {
+    transform: rotate(-90deg) scale(1.05);
+  }
+  75% {
+    transform: rotate(-90deg) scale(0.8);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "head head"
+      "clock form"
+      "btns ji";
+  }
+  .btn-group {
+    grid-area: btns;
+    justify-content: center;
+  }
+  .clock {
+    grid-area: clock;
+    height: 100%;
+  }
+  h1 {
+    grid-area: head;
+
+    align-self: center;
+  }
+  form {
+    align-self: center;
+    justify-self: center;
+    grid-area: form;
+    width: 50%;
+    justify-content: space-around;
+  }
+  footer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  form {
+    height: 40%;
+  }
+  footer {
+    position: relative;
+  }
+}
